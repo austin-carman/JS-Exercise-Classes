@@ -146,8 +146,7 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
-    // Stetch: Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
-
+ 
  class Instructor extends Lambdasian {
    constructor(attributes){
      super(attributes);
@@ -189,9 +188,6 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
-          // Stretch: This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-          // + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
-
 
  class Student extends Lambdasian{
      constructor(attributes){
@@ -199,11 +195,11 @@ class Airplane {
        this.previousBackground = attributes.previousBackground;
        this.className = attributes.className;
        this.favSubjects = attributes.favSubjects;
-      //  this.grade = 87; //stretch ???
+       this.grade = 82; //stretch?
      }
-     
+
      listSubjects(){
-       return `${this.favSubjects.toString()}`
+       return `Loving ${this.favSubjects.join(', ')}`
      }
 
      PRAssignment(subject){
@@ -213,12 +209,15 @@ class Airplane {
      sprintChallenge(subject){
        return `${this.name} has begun sprint challenge on ${subject}`
      }
-
-     graduate(){
-
-     }
  }
-  
+  const austin = new Student({
+    name: 'Austin',
+    age: 29,
+    location: 'Utah',
+    favSubjects: ['HTML', 'CSS', 'JavaScript']
+  })
+  console.log(austin.listSubjects());
+
   /*
     TASK 6
       - Write a ProjectManager class extending Instructor.
