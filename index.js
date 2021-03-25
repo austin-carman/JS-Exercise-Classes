@@ -125,13 +125,7 @@ class Airplane {
     }
   }
   
-  const practice = new Lambdasian({
-    name: 'Austin',
-    age: 29,
-    location: 'Utah'
-  });
-  console.log(practice.speak());
-  
+ 
   /*
     TASK 4
       - Write an Instructor class extending Lambdasian.
@@ -162,14 +156,14 @@ class Airplane {
    grade(student, subject){
      return `${student.name} receives a perfect score on ${subject}`
    }
-
-  //  stretch(){
-  //    if(Math.random()>= 0.5){
-  //      student.grade = student.grade + 10;
-  //    } else {
-  //      student.grade = student.grade - 10;
-  //    }
-  //  }
+   // stretch 
+   score(){ 
+     if(Math.random()>= 0.5){
+       student.grade = student.grade + 10;
+     } else {
+       student.grade = student.grade - 10;
+     }
+   }
  }
 
 
@@ -195,7 +189,7 @@ class Airplane {
        this.previousBackground = attributes.previousBackground;
        this.className = attributes.className;
        this.favSubjects = attributes.favSubjects;
-       this.grade = 82; //stretch?
+       this.grade = this.grade; //stretch
      }
 
      listSubjects(){
@@ -209,15 +203,17 @@ class Airplane {
      sprintChallenge(subject){
        return `${this.name} has begun sprint challenge on ${subject}`
      }
- }
-  const austin = new Student({
-    name: 'Austin',
-    age: 29,
-    location: 'Utah',
-    favSubjects: ['HTML', 'CSS', 'JavaScript']
-  })
-  console.log(austin.listSubjects());
 
+    //  stretch
+    graduate(){
+      if(this.grade > 70){
+        return `You graduate!`
+      } else{
+        return `keep grading`
+      }
+    }
+ }
+  
   /*
     TASK 6
       - Write a ProjectManager class extending Instructor.
@@ -242,8 +238,8 @@ class Airplane {
        return `${this.name} announces to ${channel}, @channel standy times!`
      }
 
-     debugsCode(attributes, subject){
-       return `${this.name} debugs ${attributes.name}'s code on ${subject}`
+     debugsCode(studentAttributes, subject){
+       return `${this.name} debugs ${studentAttributes.name}'s code on ${subject}`
      }
  }
 
